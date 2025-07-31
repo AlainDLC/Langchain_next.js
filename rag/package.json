@@ -10,12 +10,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/react": "^1.2.12",
     "@datastax/astra-db-ts": "^2.0.2",
     "@google/generative-ai": "^0.24.1",
     "@langchain/community": "^0.3.49",
     "@langchain/core": "^0.3.66",
-    "ai": "^4.3.19",
-    "dotenv": "^17.2.1",
+    "ai": "^2.2.6",
+    "buffer": "^6.0.3",
+    "dotenv": "^16.4.5",
     "langchain": "^0.3.30",
     "next": "15.4.4",
     "openai": "^5.10.2",
@@ -25,14 +27,14 @@
     "ts-node": "^10.9.2"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@tailwindcss/postcss": "^4",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
+    "@eslint/eslintrc": "^3.0.0",
+    "@tailwindcss/postcss": "^4.0.0",
+    "@types/node": "^20.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.0.0",
     "eslint-config-next": "15.4.4",
-    "tailwindcss": "^4",
-    "typescript": "^5"
+    "tailwindcss": "^4.0.0",
+    "typescript": "^5.0.0"
   }
 }

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import Image from "next/image";
@@ -11,9 +12,18 @@ import Bubble from "./components/Bubble";
 const Home = () => {
   const { append, status, messages, input, handleInputChange, handleSubmit } =
     useChat();
-  const noMassage = true;
+  const noMassage = !messages || messages.length === 0;
+
+  const handlePromt = (promptText) => {
+    const msg: Message = {
+      id: crypto.randomUUID(),
+      content: promptText,
+      role: "user",
+    };
+    append(msg as any);
+  };
   return (
-    <main className="w-80 h-80 bg-gray-300 text-center  gap-2">
+    <main className="w-80 h-80  text-center  gap-2 overflow-x-auto">
       <Image src={logo} width="350" alt="logo" />
       <section
         className={
@@ -31,7 +41,7 @@ const Home = () => {
             {messages.map((message, index) => (
               <Bubble key={`message-${index}`} message={message} />
             ))}
-            <PromtSuggestionRow />
+            <PromtSuggestionRow onPromtClick={handlePromt} />
           </>
         ) : (
           <>{status === "ready" && <LoadingBubble />}</>

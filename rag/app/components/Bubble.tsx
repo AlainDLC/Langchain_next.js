@@ -1,4 +1,5 @@
 const Bubble = ({ message }) => {
-  return <div></div>;
+  const { content, role } = message;
+  return <div>{content}</div>;
 };
 export default Bubble;
